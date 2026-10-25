@@ -1,0 +1,730 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --cream: #f5efe5;
+  --paper: #fffaf2;
+  --brown: #554237;
+  --muted: #8d7b6b;
+  --rose: #b78073;
+  --sage: #8a967a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--brown);
+  font-family: "DM Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+}
+
+h1 {
+  margin: 24px 0;
+  font-size: clamp(52px, 9vw, 88px);
+  line-height: 0.95;
+}
+
+h1 em {
+  color: var(--rose);
+  font-weight: 400;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.intro {
+  max-width: 390px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* =========================
+   PAGE D'ACCUEIL
+   ========================= */
+
+.home,
+.song-page {
+  min-height: 100vh;
+  padding: 70px 24px 30px;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.sections {
+  display: grid;
+  grid-template-columns: minmax(0, 230px);
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin: 45px 0 28px;
+}
+
+.person-card {
+  position: relative;
+  display: flex;
+  min-height: 245px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 26px 18px;
+  border: 1px solid #e4d7c7;
+  border-radius: 150px 150px 12px 12px;
+  background: var(--paper);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.person-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px #55423712;
+}
+
+.koloina {
+  background: #e6e8dc;
+}
+
+.card-number {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.card-flower {
+  margin-bottom: 8px;
+  color: var(--rose);
+  font-size: 32px;
+}
+
+.person-card h2 {
+  margin: 0;
+  font-size: 38px;
+}
+
+.person-card p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.card-arrow {
+  position: absolute;
+  right: 22px;
+  bottom: 20px;
+}
+
+.home-dedication {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+footer {
+  margin-top: 45px;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* =========================
+   PAGE CHANSON CLASSIQUE
+   ========================= */
+
+.song-page {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.song-content {
+  width: 100%;
+  max-width: 680px;
+  text-align: center;
+}
+
+.back-link {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid rgba(111, 73, 62, 0.35);
+  border-radius: 30px;
+  background: rgba(255, 250, 242, 0.92);
+  color: #6f493e;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(70, 45, 35, 0.08);
+  transition:
+    background 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
+}
+
+.back-link:hover {
+  transform: translateX(-3px);
+  border-color: #6f493e;
+  background: #6f493e;
+  color: #fffaf2;
+}
+
+.song-icon {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--rose);
+  font-size: 36px;
+}
+
+.video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin: 35px auto 25px;
+  border-radius: 12px;
+  background: #e6dacc;
+  box-shadow: 0 15px 40px #55423712;
+}
+
+.video-container iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.song-quote {
+  margin-bottom: 6px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  font-style: italic;
+}
+
+.song-caption {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* =========================
+   PAGE PERSONNELLE
+   (grille : photos à gauche, paroles à droite, vidéo en bas)
+   ========================= */
+
+.princia-page {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  column-gap: 44px;
+  align-items: start;
+  min-height: 100vh;
+  padding: 32px max(24px, calc((100% - 1080px) / 2)) 60px;
+  background-color: var(--cream);
+  background-image:
+    linear-gradient(
+      rgba(245, 239, 229, 0.48),
+      rgba(245, 239, 229, 0.62)
+    ),
+    url("/images/fond.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.princia-page .back-link {
+  position: relative;
+  top: auto;
+  left: auto;
+  grid-column: 1 / -1;
+  grid-row: 1;
+  justify-self: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 32px;
+}
+
+.princia-header {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto 45px;
+  text-align: center;
+  justify-self: center;
+}
+
+.princia-page .song-icon {
+  margin: 12px 0;
+  font-size: 32px;
+}
+
+.princia-page h1 {
+  margin: 16px 0;
+  font-size: clamp(48px, 8vw, 76px);
+  line-height: 1;
+}
+
+.princia-page .intro {
+  max-width: 420px;
+}
+
+/* =========================
+   PHOTOS ÉPARPILLÉES (colonne de gauche)
+   ========================= */
+
+.memory-gallery {
+  grid-column: 1;
+  grid-row: 3;
+  margin: 0 0 65px;
+  text-align: center;
+}
+
+.memory-gallery .eyebrow {
+  margin: 0 0 8px;
+}
+
+.memory-gallery h2 {
+  margin: 10px 0 28px;
+  color: var(--brown);
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 22px 18px;
+}
+
+.memory-photo {
+  min-width: 0;
+  margin: 0;
+  padding: 8px 8px 12px;
+  border: 1px solid #e4d7c7;
+  background: var(--paper);
+  box-shadow: 0 8px 22px rgba(65, 46, 32, 0.18);
+  opacity: 0;
+  transform: rotate(-3deg);
+  animation: photoAppear 700ms ease forwards;
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.memory-photo:nth-child(even) {
+  margin-top: 46px;
+  transform: rotate(3deg);
+}
+
+.memory-photo:nth-child(3n) {
+  transform: rotate(-1deg);
+}
+
+.memory-photo:nth-child(1) {
+  animation-delay: 100ms;
+}
+
+.memory-photo:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+.memory-photo:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+.memory-photo:nth-child(4) {
+  animation-delay: 400ms;
+}
+
+.memory-photo:nth-child(5) {
+  animation-delay: 500ms;
+}
+
+.memory-photo:nth-child(6) {
+  animation-delay: 600ms;
+}
+
+.memory-photo:nth-child(7) {
+  grid-column: 1 / -1;
+  width: 62%;
+  justify-self: center;
+  margin-top: 0;
+  transform: rotate(2deg);
+  animation-delay: 700ms;
+}
+
+.memory-photo:hover {
+  z-index: 2;
+  transform: translateY(-8px) rotate(0) scale(1.04);
+  box-shadow: 0 18px 35px rgba(65, 46, 32, 0.28);
+}
+
+.memory-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: #eee4d6;
+}
+
+.memory-photo figcaption {
+  padding: 10px 3px 0;
+  color: var(--muted);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+  font-style: italic;
+}
+
+/* =========================
+   PAROLES (colonne de droite, fond brun chaud)
+   ========================= */
+
+.princia-page .lyrics {
+  position: relative;
+  grid-column: 2;
+  grid-row: 3;
+  margin: 0 0 65px;
+  padding: 44px 32px;
+  border: 1px solid rgba(255, 250, 242, 0.18);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 15% 8%, rgba(183, 128, 115, 0.35), transparent 45%),
+    radial-gradient(circle at 90% 92%, rgba(138, 150, 122, 0.3), transparent 45%),
+    linear-gradient(160deg, rgba(85, 66, 55, 0.94), rgba(66, 49, 40, 0.96));
+  box-shadow: 0 20px 50px rgba(40, 27, 20, 0.35);
+  text-align: center;
+}
+
+.princia-page .lyrics::before {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--rose);
+  font-size: 20px;
+  content: "✦";
+}
+
+.princia-page .lyrics .eyebrow {
+  margin: 0;
+  color: #d9b8a8;
+}
+
+.princia-page .lyrics h2 {
+  margin: 8px 0 30px;
+  color: var(--paper);
+  font-size: 34px;
+}
+
+.princia-page .lyrics .verse {
+  margin: 0 0 28px;
+  color: #f5efe5;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  line-height: 1.9;
+}
+
+.princia-page .lyrics .verse:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   VIDÉO (en bas, pleine largeur)
+   ========================= */
+
+.song-card {
+  grid-column: 1 / -1;
+  grid-row: 4;
+  justify-self: center;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto 50px;
+  padding: 18px 18px 24px;
+  border: 1px solid rgba(170, 139, 111, 0.5);
+  border-radius: 18px;
+  background: rgba(255, 250, 242, 0.9);
+  box-shadow: 0 18px 45px rgba(65, 46, 32, 0.14);
+  animation: fadeUp 800ms ease both;
+}
+
+.song-card .song-player {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin: 0;
+  border: 0;
+  border-radius: 10px;
+  background: #e6dacc;
+  box-shadow: none;
+}
+
+.song-player iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.song-card-caption {
+  max-width: 450px;
+  margin: 20px auto 0;
+  color: var(--muted);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* =========================
+   PIED DE PAGE
+   ========================= */
+
+.princia-footer {
+  grid-column: 1 / -1;
+  grid-row: 5;
+  justify-self: center;
+  margin: 10px auto 0;
+  text-align: center;
+}
+
+.princia-page .princia-footer p {
+  margin: 0 0 8px;
+  color: var(--rose);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  font-style: italic;
+  letter-spacing: 0;
+}
+
+.princia-footer span {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes photoAppear {
+  from {
+    opacity: 0;
+    translate: 0 20px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* =========================
+   ADAPTATION TABLETTE / MOBILE
+   (une seule colonne : paroles, photos, vidéo)
+   ========================= */
+
+@media (max-width: 850px) {
+  .princia-page {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 26px 16px 42px;
+    background-attachment: scroll;
+  }
+
+  .princia-page .back-link {
+    align-self: center;
+    order: 0;
+    margin-bottom: 28px;
+  }
+
+  .princia-header {
+    order: 1;
+    align-self: center;
+  }
+
+  .princia-page .lyrics {
+    order: 2;
+    margin-bottom: 45px;
+    padding: 30px 18px;
+    border-radius: 14px;
+  }
+
+  .memory-gallery {
+    order: 3;
+    margin-bottom: 45px;
+  }
+
+  .song-card {
+    order: 4;
+    align-self: center;
+    margin: 0 auto 35px;
+    padding: 10px 10px 18px;
+    border-radius: 14px;
+  }
+
+  .princia-footer {
+    order: 5;
+    align-self: center;
+  }
+}
+
+@media (max-width: 650px) {
+  .home {
+    padding: 55px 20px 30px;
+  }
+
+  .sections {
+    grid-template-columns: minmax(0, 230px);
+    max-width: 100%;
+    margin: 35px 0 24px;
+  }
+
+  .person-card {
+    min-height: 220px;
+    padding: 20px 10px;
+  }
+
+  .person-card h2 {
+    font-size: 32px;
+  }
+
+  .person-card p {
+    font-size: 10px;
+  }
+
+  .home-dedication {
+    font-size: 18px;
+  }
+
+  .song-page {
+    padding: 85px 20px 40px;
+  }
+
+  .song-page .back-link {
+    top: 25px;
+    left: 20px;
+  }
+
+  .song-quote {
+    font-size: 25px;
+  }
+
+  .princia-page h1 {
+    font-size: clamp(44px, 12vw, 62px);
+  }
+
+  .memory-gallery h2 {
+    font-size: 29px;
+  }
+
+  .photo-grid {
+    gap: 16px 12px;
+  }
+
+  .memory-photo {
+    padding: 6px 6px 10px;
+  }
+
+  .memory-photo:nth-child(even) {
+    margin-top: 28px;
+  }
+
+  .memory-photo:nth-child(7) {
+    width: 70%;
+  }
+
+  .memory-photo figcaption {
+    padding-top: 8px;
+    font-size: 14px;
+  }
+
+  .princia-page .lyrics h2 {
+    font-size: 29px;
+  }
+
+  .princia-page .lyrics .verse {
+    font-size: 19px;
+    line-height: 1.85;
+  }
+
+  .song-card-caption {
+    margin-top: 16px;
+    font-size: 18px;
+  }
+
+  .princia-page .princia-footer p {
+    font-size: 26px;
+  }
+}
+
+/* Respecter les préférences de réduction des animations */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .memory-photo {
+    opacity: 1;
+    translate: none;
+  }
+}
