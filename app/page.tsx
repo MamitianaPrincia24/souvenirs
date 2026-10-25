@@ -27,7 +27,7 @@ export default function Home() {
       </div>
 
       <p className="home-dedication">
-        Conçu spécialement pour Joloia,
+        Conçu spécialement pour Joloina,
         <br />
         de la part de Princia ♡
       </p>
